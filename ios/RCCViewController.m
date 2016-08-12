@@ -136,7 +136,7 @@ const NSInteger TRANSPARENT_NAVBAR_TAG = 78264803;
   
   UIColor* backgroundColor = [RCTConvert UIColor:props[@"backgroundColor"]];
   if (backgroundColor) {
-    view.backgroundColor = backgroundColor;
+    self.view.backgroundColor = backgroundColor;
   }
   
   self.edgesForExtendedLayout = UIRectEdgeNone; // default
