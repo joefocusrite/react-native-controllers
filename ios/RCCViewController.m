@@ -109,7 +109,7 @@ const NSInteger TRANSPARENT_NAVBAR_TAG = 78264803;
   self = [super init];
   if (!self) return nil;
 
-  [self commonInit:reactView navigatorStyle:navigatorStyle props:mergedProps];
+  [self commonInit:reactView navigatorStyle:navigatorStyle props:passProps];
 
   return self;
 }
@@ -125,7 +125,7 @@ const NSInteger TRANSPARENT_NAVBAR_TAG = 78264803;
   self = [super init];
   if (!self) return nil;
 
-  [self commonInit:reactView navigatorStyle:navigatorStyle props:mergedProps];
+  [self commonInit:reactView navigatorStyle:navigatorStyle props:passProps];
 
   return self;
 }
@@ -133,11 +133,7 @@ const NSInteger TRANSPARENT_NAVBAR_TAG = 78264803;
 - (void)commonInit:(RCTRootView*)reactView navigatorStyle:(NSDictionary*)navigatorStyle props:(NSDictionary*)props
 {
   self.view = reactView;
-  
-  UIColor* backgroundColor = [RCTConvert UIColor:props[@"backgroundColor"]];
-  if (backgroundColor) {
-    self.view.backgroundColor = backgroundColor;
-  }
+  self.view.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
   
   self.edgesForExtendedLayout = UIRectEdgeNone; // default
   self.automaticallyAdjustsScrollViewInsets = NO; // default
